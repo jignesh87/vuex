@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <h1><label>Name: </label>{{ name }}</h1>
-    <h4><label>Gender: </label>{{ gender }}</h4>
+    <home></home>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import home from './pages/Home.vue'
+//import { mapGetters } from 'vuex'
 
 export default {
   name: 'app',
@@ -17,16 +17,19 @@ export default {
     }
   },
   created() {
-   setTimeout(()=> {
+   /*setTimeout(()=> {
     this.$store.commit('setGender',"Female");
     this.$store.commit('setName',"Sujata");
-   } ,2000 ) 
+   } ,2000 ) */
   },
   computed: {
-    ...mapGetters({
+   /* ...mapGetters({
       name:'getName',
       gender:'getGender'
-    })
+    })*/
+  },
+  components: {
+    "home":home
   }
 }
 </script>

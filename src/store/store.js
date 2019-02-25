@@ -9,10 +9,10 @@ const store = new Vuex.Store({
 		gender:"Male"
 	},
 	getters: {
-	    getName: state => {
+	    getName: (state) => {
 	      return state.name;
 	    },
-	    getGender: state => {
+	    getGender: (state) => {
 	      return state.gender;
 	    }
 	},
