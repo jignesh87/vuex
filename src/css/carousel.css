@@ -1,44 +1,8 @@
-<template>
-  <div id="app">
-    <home></home>
-  </div>
-</template>
-
-<script>
-import home from './pages/Home.vue'
-//import { mapGetters } from 'vuex'
-
-export default {
-  name: 'app',
-  data () {
-    return {
-     /* name: this.$store.getters.getName,
-      gender: this.$store.getters.getGender,*/
-    }
-  },
-  created() {
-   /*setTimeout(()=> {
-    this.$store.commit('setGender',"Female");
-    this.$store.commit('setName',"Sujata");
-   } ,2000 ) */
-  },
-  computed: {
-   /* ...mapGetters({
-      name:'getName',
-      gender:'getGender'
-    })*/
-  },
-  components: {
-    "home":home
-  }
-}
-</script>
-
-<style>
 .lni-c-carousel-wrapper {
     display: flex;
     position: relative;
     padding: 40px;
+    //TODO: remove after testing
     width: 670px;
     height: 364px;
 }
@@ -88,7 +52,15 @@ export default {
     height: 100%;  
 }
 
+/*
 
+
+css for transition start
+
+*/
+// .lni-c-slide {
+//     width:100%;
+// }
 .lni-c-slider {
     overflow: hidden;
     display: flex;
@@ -105,7 +77,7 @@ export default {
 
 .lni-c-slide-leave-to {
   transform: translate(-100%, 0);
-}
+}/*end*/
 
 .lni-c-slide a {
     text-decoration: none;
@@ -142,4 +114,3 @@ export default {
 .slide3 { order: 3; }
 .slide4 { order: 4; }
 .slide5 { order: 5; }
-</style>
