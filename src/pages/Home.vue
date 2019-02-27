@@ -2,14 +2,16 @@
 	<div>
 		<!-- <gender :name="name" :gender="gender"></gender>
 		<genderrepl :name="name" :gender="gender"></genderrepl> -->
-		<carousel :carousel="carousel">
-        </carousel>
+		<!-- <carousel :carousel="carousel">
+        </carousel> -->
+        <trans></trans>
 	</div>
 </template>
 <script type="text/javascript">
 	import gender from '../components/Gender.vue'
 	import genderrepl from '../components/Genderrepl.vue'
 	import carousel from '../components/LniCarousel.vue'
+	import trans from '../components/Trans.vue'
 	import { mapGetters } from 'vuex'
 
 	export default {
@@ -37,6 +39,7 @@
 			"gender":gender,
 			"genderrepl":genderrepl,
 			"carousel":carousel,
+			"trans":trans,
 		},
 		created() {
 			setTimeout(()=> {

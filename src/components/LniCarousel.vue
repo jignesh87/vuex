@@ -1,5 +1,5 @@
 <template>
-    <div class="lni-c-carousel-wrapper" @mouseover="mouseOver">
+    <div class="lni-c-carousel-wrapper">
         <!-- <div class="lni-c-carousel-container">
             <slide v-for="(slide, index) in carousel"
                 :key="`${slide}_${index}`"
