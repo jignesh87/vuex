@@ -1,5 +1,5 @@
 <template>
-    <div class="lni-c-carousel-wrapper">
+    <div class="lni-c-carousel-wrapper" @mouseover="mouseover" @mouseleave="mouseleave">
         <!-- <div class="lni-c-carousel-container">
             <slide v-for="(slide, index) in carousel"
                 :key="`${slide}_${index}`"
@@ -8,7 +8,7 @@
                 >
             </slide>
         </div> -->
-        <div class="lni-c-carousel-container">
+        <div class="lni-c-carousel-container" >
             <slide :slide="carousel" :curindex="position"></slide>
         </div>
         <ul class="lni-c-carousel-pagination">
@@ -32,6 +32,8 @@ export default {
     data() {
         return {
             position: 0,
+            inter:2000,
+			playpause:null,
         };
     },
     props: {
@@ -41,12 +43,20 @@ export default {
         nextSlide(curindex) {
             this.position = curindex;
         },
-        mouseOver() {
-            console.log(this.position);
+       mouseover() {
+            this.inter = 2000;
+            clearInterval(this.playpause) 
+        },    
+        mouseleave() {
+            this.inter = 2000;
+            this.setClearInterval();
+        },
+        setClearInterval() {
+            this.playpause = setInterval(()=>{  this.position = (this.position+1 < this.carousel.length) ? this.position + 1 : 0; }, this.inter);
         }
     },
     created() {
-        setInterval(()=>{  this.position = (this.position+1 < this.carousel.length) ? this.position + 1 : 0; }, 2000);
+        this.setClearInterval();
     }
 };
 </script>

@@ -2,9 +2,9 @@
 	<div>
 		<!-- <gender :name="name" :gender="gender"></gender>
 		<genderrepl :name="name" :gender="gender"></genderrepl> -->
-		<!-- <carousel :carousel="carousel">
-        </carousel> -->
-        <trans></trans>
+		<carousel :carousel="carousel">
+        </carousel>
+        <!-- <trans></trans> -->
 	</div>
 </template>
 <script type="text/javascript">
@@ -20,16 +20,16 @@
 			return {
 				carousel: [
                     {
-                        title: 'Jignesh',
-                        headline: 'Designation: Fullstack Devloper ',
+                        title: 'Paid Sick Leave',
+                        headline: 'Employees:  You now have paid sick leave!',
                         route: '#test',
                     }, {
-                        title: 'Pratik',
-                        headline: 'Designation:  Web Devloper',
+                        title: 'File A Claim',
+                        headline: 'Employers:  File a Claim Today!',
                         route: '#test',
                     }, {
-                        title: 'Dimpy',
-                        headline: 'Designation:  Web Designer',
+                        title: 'Safety Training Available',
+                        headline: 'Employers:  Free Safety Classes for all employees!',
                         route: '#test',
                     },
                 ],

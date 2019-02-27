@@ -1,9 +1,5 @@
 <template>
 	<div id="demo">
-	  <button @mouseover="mouseover"
-	    @mouseleave="mouseleave">
-	   {{message}}
-	  </button>
 		<div class="lni-c-slide">
 	        <div class="lni-c-slider" @mouseover="mouseover" @mouseleave="mouseleave">
 	            <transition name="lni-c-slide" >
@@ -23,9 +19,8 @@
 		data() {
 			return {
 				position:0,
-			    show: true,
-			    message:"Hover Me!",
 			    inter:2000,
+				playpause:null,
 			    slide: [
                     {
                         title: 'Jignesh',
@@ -45,18 +40,23 @@
 		},
 		methods: {
 			mouseover() {
-		      this.message = 'Good!'
-		      this.inter = 10000;
+		      this.inter = 2000;
+			  clearInterval(this.playpause) 
 		    },    
 		    mouseleave() {
-		      this.message = 'Hover Me!'
-		       this.inter = 3000;
-		    }	
+			   this.inter = 2000;
+			   this.setClearInterval();
+			},
+			setClearInterval() {
+				this.playpause = setInterval(()=>{  this.position = (this.position+1 < this.slide.length) ? this.position + 1 : 0; }, this.inter);
+			}	
 		},
 		created() {
-	        setInterval(()=>{  this.position = (this.position+1 < this.slide.length) ? this.position + 1 : 0; }, this.inter);
-	        console.log("asdsdsa");
-	    }
+	        this.setClearInterval();
+		},
+		beforeDestroy() {
+			clearInterval(this.playpause)
+		}
 	}
 </script>
 <style type="text/css">

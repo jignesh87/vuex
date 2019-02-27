@@ -53,20 +53,16 @@
 }
 
 /*
-
-
 css for transition start
-
 */
-// .lni-c-slide {
-//     width:100%;
-// }
+
+/*
 .lni-c-slider {
     overflow: hidden;
     display: flex;
 }
 
-/*.lni-c-slide-leave-active,
+.lni-c-slide-leave-active,
 .lni-c-slide-enter-active {
   transition: 0.5s;
 }
