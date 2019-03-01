@@ -1,5 +1,5 @@
 <template>
-	<div id="demo">
+	<!-- <div id="demo">
 		<div class="lni-c-slide">
 	        <div class="lni-c-slider" @mouseover="mouseover" @mouseleave="mouseleave">
 	            <transition name="lni-c-slide" >
@@ -10,7 +10,23 @@
 	            </transition>
 	        </div>
 	    </div>
-	</div>
+	</div> -->
+	<div id="demo">
+      <button v-on:click="show = !show">
+        Toggle
+      </button>
+      <transition name="slide">
+        <p v-if="show">{{message}}</p>
+      </transition>
+      <h3>
+        Img slider
+      </h3>
+      <transition-group tag="div" class="img-slider" name="slide">
+      <div v-for="number in [currentImg]" v-bind:key="number" >
+        <img :src="imgList[Math.abs(currentImg) % imgList.length]"/>
+      </div>
+      </transition-group>
+     </div>
 </template>
 <script type="text/javascript">
 

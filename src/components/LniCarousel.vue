@@ -5,11 +5,13 @@
                 :key="`${slide}_${index}`"
                 :slide="slide"
                 :class="`slide${index}`"
+                :curindex="position"
+                :wtf=index
                 >
             </slide>
-        </div> -->
+        </div>  -->
         <div class="lni-c-carousel-container" >
-            <slide :slide="carousel" :curindex="position"></slide>
+            <slide :carousel="carousel" :curindex="position"></slide>
         </div>
         <ul class="lni-c-carousel-pagination">
             <li v-for="(slide, index) in carousel"
@@ -32,7 +34,7 @@ export default {
     data() {
         return {
             position: 0,
-            inter:2000,
+            inter:4000,
 			playpause:null,
         };
     },
@@ -44,11 +46,11 @@ export default {
             this.position = curindex;
         },
        mouseover() {
-            this.inter = 2000;
+            this.inter = 4000;
             clearInterval(this.playpause) 
         },    
         mouseleave() {
-            this.inter = 2000;
+            this.inter = 4000;
             this.setClearInterval();
         },
         setClearInterval() {
